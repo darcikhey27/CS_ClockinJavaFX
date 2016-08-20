@@ -56,7 +56,6 @@
     </MenuBar>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <children>
-            <TextField fx:id="textOut" layoutX="71.0" layoutY="14.0" prefHeight="40.0" prefWidth="181.0" promptText="enter sid" />
             <GridPane layoutX="32.0" layoutY="65.0" prefHeight="255.0" prefWidth="255.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -95,7 +94,7 @@
                         <Font size="28.0" />
                      </font>
                   </Button>
-                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="88.0" text="1">
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#buttonClick" prefHeight="64.0" prefWidth="88.0" text="1">
                      <font>
                         <Font size="28.0" />
                      </font>
@@ -132,6 +131,7 @@
                   </Button>
                </children>
             </GridPane>
+            <TextField fx:id="displayBox" layoutX="32.0" layoutY="13.0" prefHeight="32.0" prefWidth="255.0" />
       </children>
     </AnchorPane>
   </children>
