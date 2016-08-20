@@ -11,9 +11,13 @@ import javafx.scene.input.KeyEvent;
 public class Controller 
 {
 	
-	@FXML
-	private  TextField textOut;
-	@FXML TextArea lblOut;
+	// text boxes and output stuff
+	
+	//TODO: work on this thing that is giving me problems or watch youtube videos
+	
+	@FXML 
+	private TextField displayBox;
+	
 	
 	@FXML
 	public void buttonClick(KeyEvent key)
