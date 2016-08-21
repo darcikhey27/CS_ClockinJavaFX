@@ -18,7 +18,7 @@ public class AppTester extends Application
 			Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
 			Scene scene = new Scene(root);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			primaryStage.setTitle("File search app");
+			primaryStage.setTitle("Student ClockIN");
 			primaryStage.setScene(scene);	
 			primaryStage.show();
 		} catch(Exception e) 

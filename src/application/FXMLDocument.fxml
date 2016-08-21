@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="400.0" prefWidth="310.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+<VBox prefHeight="491.0" prefWidth="358.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -54,9 +54,9 @@
         </Menu>
       </menus>
     </MenuBar>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="466.0" prefWidth="348.0" VBox.vgrow="ALWAYS">
       <children>
-            <GridPane layoutX="32.0" layoutY="65.0" prefHeight="255.0" prefWidth="255.0">
+            <GridPane layoutX="32.0" layoutY="65.0" prefHeight="350.0" prefWidth="274.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="116.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -69,69 +69,78 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button mnemonicParsing="false" prefHeight="64.0" prefWidth="88.0" text="4" GridPane.rowIndex="1">
+                  <Button mnemonicParsing="false" prefHeight="90.0" prefWidth="130.0" text="4" GridPane.rowIndex="1">
                      <font>
                         <Font size="28.0" />
                      </font>
                   </Button>
-                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="88.0" text="3" GridPane.columnIndex="2">
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#buttonClick" prefHeight="90.0" prefWidth="130.0" text="3" GridPane.columnIndex="2">
                      <font>
                         <Font size="28.0" />
                      </font>
                   </Button>
-                  <Button layoutX="95.0" layoutY="10.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="88.0" text="2" GridPane.columnIndex="1">
+                  <Button layoutX="95.0" layoutY="10.0" mnemonicParsing="false" onAction="#buttonClick" prefHeight="90.0" prefWidth="130.0" text="2" GridPane.columnIndex="1">
                      <font>
                         <Font size="28.0" />
                      </font>
                   </Button>
-                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="88.0" text="6" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="130.0" text="6" GridPane.columnIndex="2" GridPane.rowIndex="1">
                      <font>
                         <Font size="28.0" />
                      </font>
                   </Button>
-                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="88.0" text="5" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="130.0" text="5" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font size="28.0" />
                      </font>
                   </Button>
-                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#buttonClick" prefHeight="64.0" prefWidth="88.0" text="1">
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#buttonClick" prefHeight="90.0" prefWidth="130.0" text="1">
                      <font>
                         <Font size="28.0" />
                      </font>
                   </Button>
-                  <Button layoutX="10.0" layoutY="74.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="88.0" text="9" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                  <Button layoutX="10.0" layoutY="74.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="130.0" text="9" GridPane.columnIndex="2" GridPane.rowIndex="2">
                      <font>
                         <Font size="28.0" />
                      </font>
                   </Button>
-                  <Button layoutX="10.0" layoutY="74.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="88.0" text="8" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <Button layoutX="10.0" layoutY="74.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="130.0" text="8" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <font>
                         <Font size="28.0" />
                      </font>
                   </Button>
-                  <Button layoutX="10.0" layoutY="74.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="88.0" text="7" GridPane.rowIndex="2">
+                  <Button layoutX="10.0" layoutY="74.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="130.0" text="7" GridPane.rowIndex="2">
                      <font>
                         <Font size="28.0" />
                      </font>
                   </Button>
-                  <Button layoutX="10.0" layoutY="138.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="88.0" text="Enter" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                  <Button layoutX="10.0" layoutY="138.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="130.0" text="Enter" GridPane.columnIndex="2" GridPane.rowIndex="3">
                      <font>
                         <Font size="19.0" />
                      </font>
                   </Button>
-                  <Button layoutX="10.0" layoutY="138.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="88.0" text="C" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                  <Button layoutX="10.0" layoutY="138.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="130.0" text="C" GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <font>
                         <Font size="28.0" />
                      </font>
                   </Button>
-                  <Button layoutX="10.0" layoutY="138.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="88.0" text="0" GridPane.rowIndex="3">
+                  <Button layoutX="10.0" layoutY="138.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="130.0" text="0" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#buttonClick" prefHeight="90.0" prefWidth="130.0" text="1">
                      <font>
                         <Font size="28.0" />
                      </font>
                   </Button>
                </children>
             </GridPane>
-            <TextField fx:id="textDisplay" layoutX="32.0" layoutY="26.0" prefHeight="25.0" prefWidth="255.0" />
+            <TextField fx:id="textDisplay" alignment="CENTER_RIGHT" layoutX="42.0" layoutY="32.0" prefHeight="67.0" prefWidth="294.0" promptText="0">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </TextField>
       </children>
     </AnchorPane>
   </children>
