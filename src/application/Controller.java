@@ -24,6 +24,8 @@ public class Controller implements Initializable
 
 	// TODO: work on this thing that is giving me problems or watch youtube
 	// videos
+	@FXML TextField textName;
+	@FXML TextField textID;
 
 	@FXML
 	private TextField textDisplay;
@@ -94,7 +96,15 @@ public class Controller implements Initializable
 		}
 	}
 	
-	// standard message box to show anything
+	// load a new student into the program
+	@FXML
+	public void addNewStudent()
+	{
+		//connect to the load student form 
+		// return the student/s
+		
+	}
+	// standard message box to show anything//
 	public void showMsgBox(String output)
 	{
 		Alert alert = new Alert(AlertType.INFORMATION);
