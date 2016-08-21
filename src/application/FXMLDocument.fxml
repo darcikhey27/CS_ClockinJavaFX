@@ -4,7 +4,6 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -13,43 +12,20 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="491.0" prefWidth="358.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+<VBox onKeyPressed="#getKeyboardbInput" prefHeight="491.0" prefWidth="358.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
         <Menu mnemonicParsing="false" text="File">
           <items>
             <MenuItem mnemonicParsing="false" text="New" />
-            <MenuItem mnemonicParsing="false" text="Open…" />
-            <Menu mnemonicParsing="false" text="Open Recent" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Close" />
-            <MenuItem mnemonicParsing="false" text="Save" />
-            <MenuItem mnemonicParsing="false" text="Save As…" />
-            <MenuItem mnemonicParsing="false" text="Revert" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Preferences…" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Quit" />
-          </items>
-        </Menu>
-        <Menu mnemonicParsing="false" text="Edit">
-          <items>
-            <MenuItem mnemonicParsing="false" text="Undo" />
-            <MenuItem mnemonicParsing="false" text="Redo" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Cut" />
-            <MenuItem mnemonicParsing="false" text="Copy" />
-            <MenuItem mnemonicParsing="false" text="Paste" />
-            <MenuItem mnemonicParsing="false" text="Delete" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Select All" />
-            <MenuItem mnemonicParsing="false" text="Unselect All" />
+                  <MenuItem mnemonicParsing="false" text="Load student-employees" />
+                  <MenuItem mnemonicParsing="false" text="quit" />
           </items>
         </Menu>
         <Menu mnemonicParsing="false" text="Help">
           <items>
-            <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+            <MenuItem mnemonicParsing="false" onAction="#showAboutMsgbox" text="About" />
           </items>
         </Menu>
       </menus>
@@ -69,7 +45,7 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button mnemonicParsing="false" prefHeight="90.0" prefWidth="130.0" text="4" GridPane.rowIndex="1">
+                  <Button mnemonicParsing="false" onAction="#buttonClick" prefHeight="90.0" prefWidth="130.0" text="4" GridPane.rowIndex="1">
                      <font>
                         <Font size="28.0" />
                      </font>
@@ -84,12 +60,12 @@
                         <Font size="28.0" />
                      </font>
                   </Button>
-                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="130.0" text="6" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#buttonClick" prefHeight="90.0" prefWidth="130.0" text="6" GridPane.columnIndex="2" GridPane.rowIndex="1">
                      <font>
                         <Font size="28.0" />
                      </font>
                   </Button>
-                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="130.0" text="5" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#buttonClick" prefHeight="90.0" prefWidth="130.0" text="5" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font size="28.0" />
                      </font>
@@ -99,17 +75,17 @@
                         <Font size="28.0" />
                      </font>
                   </Button>
-                  <Button layoutX="10.0" layoutY="74.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="130.0" text="9" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                  <Button layoutX="10.0" layoutY="74.0" mnemonicParsing="false" onAction="#buttonClick" prefHeight="90.0" prefWidth="130.0" text="9" GridPane.columnIndex="2" GridPane.rowIndex="2">
                      <font>
                         <Font size="28.0" />
                      </font>
                   </Button>
-                  <Button layoutX="10.0" layoutY="74.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="130.0" text="8" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <Button layoutX="10.0" layoutY="74.0" mnemonicParsing="false" onAction="#buttonClick" prefHeight="90.0" prefWidth="130.0" text="8" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <font>
                         <Font size="28.0" />
                      </font>
                   </Button>
-                  <Button layoutX="10.0" layoutY="74.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="130.0" text="7" GridPane.rowIndex="2">
+                  <Button layoutX="10.0" layoutY="74.0" mnemonicParsing="false" onAction="#buttonClick" prefHeight="90.0" prefWidth="130.0" text="7" GridPane.rowIndex="2">
                      <font>
                         <Font size="28.0" />
                      </font>
@@ -119,12 +95,12 @@
                         <Font size="19.0" />
                      </font>
                   </Button>
-                  <Button layoutX="10.0" layoutY="138.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="130.0" text="C" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                  <Button layoutX="10.0" layoutY="138.0" mnemonicParsing="false" onAction="#clearDisplayBox" prefHeight="90.0" prefWidth="130.0" text="C" GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <font>
                         <Font size="28.0" />
                      </font>
                   </Button>
-                  <Button layoutX="10.0" layoutY="138.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="130.0" text="0" GridPane.rowIndex="3">
+                  <Button layoutX="10.0" layoutY="138.0" mnemonicParsing="false" onAction="#buttonClick" prefHeight="90.0" prefWidth="130.0" text="0" GridPane.rowIndex="3">
                      <font>
                         <Font size="28.0" />
                      </font>
