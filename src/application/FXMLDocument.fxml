@@ -12,13 +12,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox onKeyPressed="#getKeyboardbInput" prefHeight="491.0" prefWidth="358.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+<VBox onKeyPressed="#getKeyboardbInput" prefHeight="491.0" prefWidth="358.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
         <Menu mnemonicParsing="false" text="File">
           <items>
-            <MenuItem mnemonicParsing="false" text="Load new student" />
+            <MenuItem mnemonicParsing="false" onAction="#menuFileAddnew_btnClick" text="Load new student" />
                   <MenuItem mnemonicParsing="false" text="Load csv" />
                   <MenuItem mnemonicParsing="false" text="quit" />
           </items>

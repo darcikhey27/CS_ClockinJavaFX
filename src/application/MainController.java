@@ -1,14 +1,20 @@
 package application;
 
+import java.io.IOException;
 // imports
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import org.omg.CORBA.PRIVATE_MEMBER;
 
 import com.sun.org.apache.bcel.internal.generic.LASTORE;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
@@ -16,16 +22,22 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField; // use this do not use awt shit
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
-public class Controller implements Initializable
+
+public class MainController implements Initializable
 {
 
-	// text boxes and output stuff
-
-	// TODO: work on this thing that is giving me problems or watch youtube
-	// videos
-	@FXML TextField textName;
-	@FXML TextField textID;
+	// fields for StudentLoad scene
+	@FXML
+	private TextField txtUserName;
+	@FXML 
+	private TextField txtID;
+	@FXML
+	private Button closeButton;
+	
+	//////////////////////////////////////
 
 	@FXML
 	private TextField textDisplay;
@@ -40,25 +52,24 @@ public class Controller implements Initializable
 		textDisplay.setText(newText);
 	}
 
-	
 	/* method writing input to the textDisplay textFiled */
 	private void writeInput(int number)
-    {
-        if (textDisplay.getLength() < 15)
-        {
-        	String oldText = textDisplay.getText();
-            textDisplay.setText(oldText+number);
-        }
-        //btnEnter.Focus();
-    }// End of wrtieNumber method.
-	
+	{
+		if (textDisplay.getLength() < 10)
+		{
+			String oldText = textDisplay.getText();
+			textDisplay.setText(oldText + number);
+		}
+		// btnEnter.Focus();
+	}// End of wrtieNumber method.
+
 	/* getting user input from the keyboard */
 	@FXML
 	public void getKeyboardbInput(KeyEvent key)
 	{
 		KeyCode input = key.getCode();
 		// testing for DIGITS from 0 to 10
-		switch(input)
+		switch (input)
 		{
 		case DIGIT0:
 			writeInput(0);
@@ -90,20 +101,48 @@ public class Controller implements Initializable
 		case DIGIT9:
 			writeInput(9);
 			break;
-		
+
 		default:
 			break;
 		}
 	}
-	
+
 	// load a new student into the program
 	@FXML
-	public void addNewStudent()
+	public String menuFileAddnew_btnClick(ActionEvent event) throws IOException
 	{
-		//connect to the load student form 
-		// return the student/s
+		// crate nodes for the new stage
 		
+		
+		Stage newStage = new Stage();
+		// create the Root Node: Pane
+		/* this Pane element has to math in the FXML file*/
+		Pane root = FXMLLoader.load(getClass().getResource("StudentLoadScene.fxml"));
+
+		// create a new scene with root and set the stage
+		Scene scene = new Scene(root);
+		// create a new stage
+		
+		newStage.setScene(scene);
+		newStage.show();
+		
+		// if(Studnet form is good, return that student
+
+		return "return something";
 	}
+	// close add new student stage
+	@FXML
+	public void handleCloseButtonAction(ActionEvent event) {
+	    Stage stage = (Stage) closeButton.getScene().getWindow();
+	    stage.close();
+	}
+	@FXML
+	public void dialogBoxbtnClick(ActionEvent event)
+	{
+		String name = txtUserName.getText();
+		System.out.println(name);
+	}
+
 	// standard message box to show anything//
 	public void showMsgBox(String output)
 	{
@@ -113,8 +152,9 @@ public class Controller implements Initializable
 		alert.setContentText(output);
 
 		alert.showAndWait();
-		
+
 	}
+
 	@FXML
 	public void showAboutMsgbox()
 	{
@@ -122,23 +162,22 @@ public class Controller implements Initializable
 		alert.setTitle("About");
 		alert.setHeaderText(null);
 		alert.setContentText("App built by Darci K Saucedo\n"
-				+ "Computer Science Student at Eastern Washington University\n"
-				+ "Mind Wide Open!");
+				+ "Computer Science Student at Eastern Washington University\n" + "Mind Wide Open!");
 
 		alert.showAndWait();
-		
+
 	}
+
 	@FXML
 	public void clearDisplayBox() // clear display box
 	{
 		textDisplay.setText("");
 	}
-	
+
 	public void initialize(URL arg0, ResourceBundle arg1)
 	{
 		// TODO Auto-generated method stub
 
 	}
-	
 
 }
