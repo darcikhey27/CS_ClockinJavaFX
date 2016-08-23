@@ -8,6 +8,8 @@ import java.util.ResourceBundle;
 import org.omg.CORBA.PRIVATE_MEMBER;
 
 import com.sun.org.apache.bcel.internal.generic.LASTORE;
+import com.sun.org.apache.bcel.internal.generic.NEW;
+import com.sun.xml.internal.bind.v2.schemagen.xmlschema.List;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -24,7 +26,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-
+import student.StudentLinkedList;
 
 public class MainController implements Initializable
 {
@@ -32,11 +34,21 @@ public class MainController implements Initializable
 	// fields for StudentLoad scene
 	@FXML
 	private TextField txtUserName;
-	@FXML 
+	@FXML
 	private TextField txtID;
 	@FXML
 	private Button closeButton;
 	
+	// student linkedlist
+	private static StudentLinkedList  list = new StudentLinkedList();
+	
+	@FXML
+	private static void file_printButtonPrintList(ActionEvent event)
+	{
+		System.out.println(list.toString());
+	}
+	
+
 	//////////////////////////////////////
 
 	@FXML
@@ -107,42 +119,6 @@ public class MainController implements Initializable
 		}
 	}
 
-	// load a new student into the program
-	@FXML
-	public String menuFileAddnew_btnClick(ActionEvent event) throws IOException
-	{
-		// crate nodes for the new stage
-		
-		
-		Stage newStage = new Stage();
-		// create the Root Node: Pane
-		/* this Pane element has to math in the FXML file*/
-		Pane root = FXMLLoader.load(getClass().getResource("StudentLoadScene.fxml"));
-
-		// create a new scene with root and set the stage
-		Scene scene = new Scene(root);
-		// create a new stage
-		
-		newStage.setScene(scene);
-		newStage.show();
-		
-		// if(Studnet form is good, return that student
-
-		return "return something";
-	}
-	// close add new student stage
-	@FXML
-	public void handleCloseButtonAction(ActionEvent event) {
-	    Stage stage = (Stage) closeButton.getScene().getWindow();
-	    stage.close();
-	}
-	@FXML
-	public void dialogBoxbtnClick(ActionEvent event)
-	{
-		String name = txtUserName.getText();
-		System.out.println(name);
-	}
-
 	// standard message box to show anything//
 	public void showMsgBox(String output)
 	{
@@ -166,6 +142,29 @@ public class MainController implements Initializable
 
 		alert.showAndWait();
 
+	}
+
+	// load a new student into the program
+	@FXML
+	public String menuFileAddnew_btnClick(ActionEvent event) throws IOException
+	{
+		// crate nodes for the new stage
+
+		Stage newStage = new Stage();
+		// create the Root Node: Pane
+		/* this Pane element has to math in the FXML file */
+		Pane root = FXMLLoader.load(getClass().getResource("StudentLoadScene.fxml"));
+
+		// create a new scene with root and set the stage
+		Scene scene = new Scene(root);
+		// create a new stage
+
+		newStage.setScene(scene);
+		newStage.show();
+
+		// if(Studnet form is good, return that student
+
+		return "return something";
 	}
 
 	@FXML
