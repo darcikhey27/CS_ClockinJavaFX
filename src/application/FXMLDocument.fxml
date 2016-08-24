@@ -20,7 +20,7 @@
           <items>
             <MenuItem mnemonicParsing="false" onAction="#menuFileAddnew_btnClick" text="Load new student" />
                   <MenuItem mnemonicParsing="false" text="Load csv" />
-                  <MenuItem mnemonicParsing="false" onAction="#file_printButtonPrintList" text="print list" />
+                  <MenuItem mnemonicParsing="false" onAction="#printList" text="print list" />
                   <MenuItem mnemonicParsing="false" text="quit" />
           </items>
         </Menu>

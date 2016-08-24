@@ -5,12 +5,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import org.omg.CORBA.PRIVATE_MEMBER;
-
-import com.sun.org.apache.bcel.internal.generic.LASTORE;
-import com.sun.org.apache.bcel.internal.generic.NEW;
-import com.sun.xml.internal.bind.v2.schemagen.xmlschema.List;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -38,16 +32,9 @@ public class MainController implements Initializable
 	private TextField txtID;
 	@FXML
 	private Button closeButton;
-	
+
 	// student linkedlist
-	private static StudentLinkedList  list = new StudentLinkedList();
-	
-	@FXML
-	private static void file_printButtonPrintList(ActionEvent event)
-	{
-		System.out.println(list.toString());
-	}
-	
+	private static StudentLinkedList list = new StudentLinkedList();
 
 	//////////////////////////////////////
 
@@ -117,6 +104,12 @@ public class MainController implements Initializable
 		default:
 			break;
 		}
+	}
+
+	@FXML
+	private void printList()
+	{
+		System.out.println(list.toString());
 	}
 
 	// standard message box to show anything//
