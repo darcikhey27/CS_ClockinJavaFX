@@ -18,9 +18,9 @@
       <menus>
         <Menu mnemonicParsing="false" text="File">
           <items>
-            <MenuItem mnemonicParsing="false" onAction="#menuFileAddnew_btnClick" text="Load new student" />
-                  <MenuItem mnemonicParsing="false" text="Load csv" />
-                  <MenuItem mnemonicParsing="false" onAction="#printList" text="print list" />
+            <MenuItem mnemonicParsing="false" onAction="#menuFileAddnew_btnClick" text="Load 1 student" />
+                  <MenuItem mnemonicParsing="false" text="Load students by textfile" />
+                  <MenuItem mnemonicParsing="false" onAction="#printList" text="print current students" />
                   <MenuItem mnemonicParsing="false" text="quit" />
           </items>
         </Menu>

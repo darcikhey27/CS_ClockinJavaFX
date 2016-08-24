@@ -31,10 +31,13 @@ public class LoadSceneController
 		    stage.close();
 		}
 		@FXML
-		public void dialogBoxbtnClick(ActionEvent event)
+		public void handleEnterButton(ActionEvent event)
 		{
+			
 			String name = txtUserName.getText();
-			System.out.println(name);
+			int id = Integer.parseInt(txtID.getText());
+			
+			
 		}
 		
 		@FXML

@@ -1,10 +1,11 @@
 package application;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
-// imports
 import java.net.URL;
 import java.util.ResourceBundle;
-
+import com.sun.java_cup.internal.runtime.Scanner;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -20,10 +21,13 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import student.Student;
 import student.StudentLinkedList;
+import sun.reflect.generics.tree.VoidDescriptor;
 
-public class MainController implements Initializable
-{
+import java.util.*;
+
+public class MainController implements Initializable {
 
 	// fields for StudentLoad scene
 	@FXML
@@ -34,7 +38,7 @@ public class MainController implements Initializable
 	private Button closeButton;
 
 	// student linkedlist
-	private static StudentLinkedList list = new StudentLinkedList();
+	private StudentLinkedList list = new StudentLinkedList();
 
 	//////////////////////////////////////
 
@@ -43,8 +47,7 @@ public class MainController implements Initializable
 
 	/* main method for getting user input using mouse click */
 	@FXML
-	public void buttonClick(ActionEvent event)
-	{
+	public void buttonClick(ActionEvent event) {
 		String digit = ((Button) event.getSource()).getText();
 		String old = textDisplay.getText();
 		String newText = old + digit;
@@ -52,10 +55,8 @@ public class MainController implements Initializable
 	}
 
 	/* method writing input to the textDisplay textFiled */
-	private void writeInput(int number)
-	{
-		if (textDisplay.getLength() < 10)
-		{
+	private void writeInput(int number) {
+		if (textDisplay.getLength() < 10) {
 			String oldText = textDisplay.getText();
 			textDisplay.setText(oldText + number);
 		}
@@ -64,12 +65,10 @@ public class MainController implements Initializable
 
 	/* getting user input from the keyboard */
 	@FXML
-	public void getKeyboardbInput(KeyEvent key)
-	{
+	public void getKeyboardbInput(KeyEvent key) {
 		KeyCode input = key.getCode();
 		// testing for DIGITS from 0 to 10
-		switch (input)
-		{
+		switch (input) {
 		case DIGIT0:
 			writeInput(0);
 			break;
@@ -106,15 +105,9 @@ public class MainController implements Initializable
 		}
 	}
 
-	@FXML
-	private void printList()
-	{
-		System.out.println(list.toString());
-	}
-
+	
 	// standard message box to show anything//
-	public void showMsgBox(String output)
-	{
+	public void showMsgBox(String output) {
 		Alert alert = new Alert(AlertType.INFORMATION);
 		alert.setTitle("About");
 		alert.setHeaderText(null);
@@ -125,8 +118,7 @@ public class MainController implements Initializable
 	}
 
 	@FXML
-	public void showAboutMsgbox()
-	{
+	public void showAboutMsgbox() {
 		Alert alert = new Alert(AlertType.INFORMATION);
 		alert.setTitle("About");
 		alert.setHeaderText(null);
@@ -139,8 +131,7 @@ public class MainController implements Initializable
 
 	// load a new student into the program
 	@FXML
-	public String menuFileAddnew_btnClick(ActionEvent event) throws IOException
-	{
+	public String menuFileAddnew_btnClick(ActionEvent event) throws IOException {
 		// crate nodes for the new stage
 
 		Stage newStage = new Stage();
@@ -159,6 +150,58 @@ public class MainController implements Initializable
 
 		return "return something";
 	}
+	
+	@FXML
+	public void printList(ActionEvent event)
+	{
+		System.out.println(list);
+	}
+
+	// close add new student stage
+	@FXML
+	public void handleCloseButtonAction(ActionEvent event) 
+	{
+		Stage stage = (Stage) closeButton.getScene().getWindow();
+		stage.close();
+	}
+
+	@FXML
+	public void handleEnterButton(ActionEvent event) {
+
+		String name = txtUserName.getText();
+		int id = 0;
+		// cast
+		try 
+		{
+			 id = Integer.parseInt(txtID.getText());
+			
+		}
+		catch(Exception e)
+		{
+			showMsgBox("Enter a valid integer for ID");
+		}
+		
+		
+		Student student = new Student(name, id);
+		list.addNode(student);
+		
+		resetLabels();
+	
+
+	}
+	@FXML
+	public void resetLabels()
+	{
+		// reset labels
+		txtUserName.setText("");
+		txtID.setText("");
+	}
+
+	@FXML
+	public void handleAddAnotherButtonAction() {
+		txtUserName.setText("");
+		txtID.setText("");
+	}
 
 	@FXML
 	public void clearDisplayBox() // clear display box
@@ -166,8 +209,18 @@ public class MainController implements Initializable
 		textDisplay.setText("");
 	}
 
-	public void initialize(URL arg0, ResourceBundle arg1)
-	{
+	public java.util.Scanner readFile(String filename) {
+		java.util.Scanner inf = null;
+		try {
+			inf = new java.util.Scanner(new File(filename));
+		} catch (FileNotFoundException e) {
+			System.out.println("file not found");
+		}
+		return inf;
+
+	}
+
+	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
 
 	}

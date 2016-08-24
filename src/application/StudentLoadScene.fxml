@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="284.0" prefWidth="515.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LoadSceneController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="284.0" prefWidth="515.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
 	<children>
 		<VBox layoutX="49.0" layoutY="89.0">
 			<children>
@@ -29,8 +29,11 @@
 				<TextField fx:id="txtID" prefHeight="36.0" prefWidth="150.0" promptText="ID" />
 			</children>
 		</VBox>
-		<Button layoutX="319.0" layoutY="176.0" mnemonicParsing="false" onAction="#dialogBoxbtnClick" prefHeight="42.0" prefWidth="108.0" text="Enter" />
-		<Label layoutX="61.0" layoutY="6.0" text="Load new Studnet" />
+		<Button layoutX="319.0" layoutY="176.0" mnemonicParsing="false" onAction="#handleEnterButton" prefHeight="42.0" prefWidth="108.0" text="Enter" />
+		<Label layoutX="61.0" layoutY="6.0" text="Load new Studnet">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
 		<Button layoutX="204.0" layoutY="176.0" mnemonicParsing="false" onAction="#handleAddAnotherButtonAction" prefHeight="42.0" prefWidth="108.0" text="Load another" />
 		<Button fx:id="closeButton" layoutX="86.0" layoutY="176.0" mnemonicParsing="false" onAction="#handleCloseButtonAction" prefHeight="42.0" prefWidth="108.0" text="Exit" />
 	</children>

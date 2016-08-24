@@ -47,6 +47,7 @@ public class StudentLinkedList implements ListInterface
 	}
 
 	//////////////////////////////////////
+	
 	private Node head;
 	private int numItems;
 
@@ -79,8 +80,7 @@ public class StudentLinkedList implements ListInterface
 			this.head = newNode;
 		} else
 		{
-			for (curr = head; curr.getNext() != null; curr = curr.getNext())
-				;
+			for (curr = head; curr.getNext() != null; curr = curr.getNext());
 			{
 				curr.setNext(newNode);
 			}
