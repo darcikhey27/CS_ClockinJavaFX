@@ -47,29 +47,26 @@ public class StudentLinkedList implements ListInterface
 	}
 
 	//////////////////////////////////////
-	
+
 	private Node head;
 	private int numItems;
 
-	public StudentLinkedList() 
-	   {
-	      head = null;
-	      numItems = 0;
-	   }
+	public StudentLinkedList()
+	{
+		head = null;
+		numItems = 0;
+	}
 
-	
 	public boolean isEmpty()
 	{
 		return numItems == 0;
 	}
 
-	
 	public int getSize()
 	{
 		return numItems;
 	}
 
-	
 	public void addNode(Object newItem)
 	{
 		Node newNode = new Node(newItem);
@@ -78,7 +75,8 @@ public class StudentLinkedList implements ListInterface
 		if (isEmpty())
 		{
 			this.head = newNode;
-		} else
+		} 
+		else
 		{
 			for (curr = head; curr.getNext() != null; curr = curr.getNext());
 			{
@@ -96,7 +94,8 @@ public class StudentLinkedList implements ListInterface
 		{
 			newNode.setNext(head);
 			this.head = newNode;
-		} else
+		} 
+		else
 		{
 			prev = find(index - 1);
 			newNode.setNext(prev.getNext());
@@ -136,7 +135,6 @@ public class StudentLinkedList implements ListInterface
 		return curr;
 	}
 
-	
 	public String toString()
 	{
 		String result = "";

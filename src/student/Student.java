@@ -14,5 +14,9 @@ public class Student
 		this.name = pName;
 		this.studentID = pStudentID;
 	}
-
+	
+	public String toString()
+	{
+		return this.name + " "+ this.studentID;
+	}
 }

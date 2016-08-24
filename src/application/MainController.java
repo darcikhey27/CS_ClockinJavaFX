@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
-import java.util.ResourceBundle;
+
 import com.sun.java_cup.internal.runtime.Scanner;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -17,6 +17,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField; // use this do not use awt shit
+import javafx.scene.control.TextInputDialog;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
@@ -38,7 +39,7 @@ public class MainController implements Initializable {
 	private Button closeButton;
 
 	// student linkedlist
-	private StudentLinkedList list = new StudentLinkedList();
+	private static StudentLinkedList list = new StudentLinkedList();
 
 	//////////////////////////////////////
 
@@ -154,7 +155,27 @@ public class MainController implements Initializable {
 	@FXML
 	public void printList(ActionEvent event)
 	{
-		System.out.println(list);
+		//System.out.println("in printlist");
+		showMsgBox(list.toString());
+		//System.out.println();
+	}
+	// TODO: work on this method 
+	@FXML
+	public Optional<String> menuFileAddFromText(ActionEvent event)
+	{
+		TextInputDialog dialog = new TextInputDialog("filepath");
+		dialog.setTitle("File path");
+		dialog.setHeaderText("Enter file name or path");
+		dialog.setContentText("Enter the file name:");
+
+		// Traditional way to get the response value.
+		Optional<String> result = dialog.showAndWait();
+		if (result.isPresent())
+		{
+		    //System.out.println("Your name: " + result.get());
+			return result;
+		}
+		return null;
 	}
 
 	// close add new student stage
@@ -180,7 +201,6 @@ public class MainController implements Initializable {
 		{
 			showMsgBox("Enter a valid integer for ID");
 		}
-		
 		
 		Student student = new Student(name, id);
 		list.addNode(student);
