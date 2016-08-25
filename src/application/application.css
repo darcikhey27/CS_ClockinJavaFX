@@ -3,8 +3,8 @@
 
 /* add rules here */
 Button {
-	-fx-color: rgb(244, 180, 0);
-	-fx-text-fill: white;
+	-fx-color: pink;
+	-fx-text-fill: green;
 	
 	/*-fx-border-color: rgb(219, 68, 55) red */
 	
@@ -22,6 +22,7 @@ Button {
 	-fx-background-radius: 5px;
 }
 VBox{
+	  
 	-fx-background-color: rgb(101, 101, 101);
 }
 

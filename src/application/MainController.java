@@ -131,6 +131,7 @@ public class MainController implements Initializable
 	}
 	
 	// calc scene 
+	@FXML
 	public void handleMainCloseButton(ActionEvent event)
 	{
 		Stage stage = (Stage) mainCloseButton.getScene().getWindow();
