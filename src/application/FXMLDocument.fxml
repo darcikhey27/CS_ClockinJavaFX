@@ -14,14 +14,14 @@
 
 <VBox onKeyPressed="#getKeyboardbInput" prefHeight="491.0" prefWidth="358.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
   <children>
-    <MenuBar VBox.vgrow="NEVER">
+    <MenuBar minWidth="-Infinity" VBox.vgrow="NEVER">
       <menus>
         <Menu mnemonicParsing="false" text="File">
           <items>
             <MenuItem mnemonicParsing="false" onAction="#menuFileAddnew_btnClick" text="Load 1 student" />
-                  <MenuItem mnemonicParsing="false" onAction="#menuFileAddFromText" text="Load students by textfile" />
+                  <MenuItem mnemonicParsing="false" onAction="#addFromText" text="Load students by textfile" />
                   <MenuItem mnemonicParsing="false" onAction="#printList" text="print current students" />
-                  <MenuItem mnemonicParsing="false" text="quit" />
+                  <MenuItem fx:id="mainCloseButton" mnemonicParsing="false" onAction="#handleMainCloseButton" text="quit" />
           </items>
         </Menu>
         <Menu mnemonicParsing="false" text="Help">
@@ -91,12 +91,12 @@
                         <Font size="28.0" />
                      </font>
                   </Button>
-                  <Button layoutX="10.0" layoutY="138.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="130.0" text="Enter" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                  <Button fx:id="checkinButton" layoutX="10.0" layoutY="138.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="130.0" text="Check in" GridPane.columnIndex="2" GridPane.rowIndex="3">
                      <font>
                         <Font size="19.0" />
                      </font>
                   </Button>
-                  <Button layoutX="10.0" layoutY="138.0" mnemonicParsing="false" onAction="#clearDisplayBox" prefHeight="90.0" prefWidth="130.0" text="C" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                  <Button fx:id="btnClear" layoutX="10.0" layoutY="138.0" mnemonicParsing="false" onAction="#clearDisplayBox" prefHeight="90.0" prefWidth="130.0" text="C" GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <font>
                         <Font size="28.0" />
                      </font>
@@ -113,7 +113,7 @@
                   </Button>
                </children>
             </GridPane>
-            <TextField fx:id="textDisplay" alignment="CENTER_RIGHT" layoutX="42.0" layoutY="32.0" prefHeight="67.0" prefWidth="294.0" promptText="0">
+            <TextField fx:id="textDisplay" alignment="CENTER_RIGHT" layoutX="42.0" layoutY="32.0" prefHeight="67.0" prefWidth="294.0" promptText="0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0">
                <font>
                   <Font size="33.0" />
                </font>

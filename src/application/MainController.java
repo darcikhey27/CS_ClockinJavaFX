@@ -4,8 +4,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
-
-import com.sun.java_cup.internal.runtime.Scanner;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -24,40 +22,50 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import student.Student;
 import student.StudentLinkedList;
-import sun.reflect.generics.tree.VoidDescriptor;
-
 import java.util.*;
 
-public class MainController implements Initializable {
+public class MainController implements Initializable
+{
 
 	// fields for StudentLoad scene
-	@FXML
-	private TextField txtUserName;
-	@FXML
-	private TextField txtID;
-	@FXML
-	private Button closeButton;
+	@FXML private TextField txtUserName;
+	@FXML private TextField txtID;
+	@FXML private Button closeButton;
 
 	// student linkedlist
 	private static StudentLinkedList list = new StudentLinkedList();
 
 	//////////////////////////////////////
 
-	@FXML
-	private TextField textDisplay;
+	@FXML private TextField textDisplay; // main keypad TextField
+	@FXML private Button checkinButton;
+	@FXML private Button btnClear;
+	@FXML private Button mainCloseButton;
+	
 
 	/* main method for getting user input using mouse click */
 	@FXML
-	public void buttonClick(ActionEvent event) {
+	public void buttonClick(ActionEvent event)
+	{
 		String digit = ((Button) event.getSource()).getText();
 		String old = textDisplay.getText();
 		String newText = old + digit;
-		textDisplay.setText(newText);
+		if(newText.length() <= 9)
+		{
+			textDisplay.setText(newText);
+		}
+		else
+		{
+			showMsgBox("check your digits");
+		}
+		
 	}
 
 	/* method writing input to the textDisplay textFiled */
-	private void writeInput(int number) {
-		if (textDisplay.getLength() < 10) {
+	private void writeInput(int number)
+	{
+		if (textDisplay.getLength() < 9)
+		{
 			String oldText = textDisplay.getText();
 			textDisplay.setText(oldText + number);
 		}
@@ -66,10 +74,12 @@ public class MainController implements Initializable {
 
 	/* getting user input from the keyboard */
 	@FXML
-	public void getKeyboardbInput(KeyEvent key) {
+	public void getKeyboardbInput(KeyEvent key)
+	{
 		KeyCode input = key.getCode();
 		// testing for DIGITS from 0 to 10
-		switch (input) {
+		switch (input)
+		{
 		case DIGIT0:
 			writeInput(0);
 			break;
@@ -106,9 +116,29 @@ public class MainController implements Initializable {
 		}
 	}
 
+	// check in students
+	public void handleCheckinButton(ActionEvent event)
+	{
+		// validate that the input is valid
+		
+		// check that students exist in the linkedList
+		
+		// create another linkedlist of checked in students
+		
+		// display you are checked in
+		
+		// if student is not in the student database  print message
+	}
 	
+	// calc scene 
+	public void handleMainCloseButton(ActionEvent event)
+	{
+		Stage stage = (Stage) mainCloseButton.getScene().getWindow();
+		stage.close();
+	}
 	// standard message box to show anything//
-	public void showMsgBox(String output) {
+	public void showMsgBox(String output)
+	{
 		Alert alert = new Alert(AlertType.INFORMATION);
 		alert.setTitle("About");
 		alert.setHeaderText(null);
@@ -119,7 +149,8 @@ public class MainController implements Initializable {
 	}
 
 	@FXML
-	public void showAboutMsgbox() {
+	public void showAboutMsgbox()
+	{
 		Alert alert = new Alert(AlertType.INFORMATION);
 		alert.setTitle("About");
 		alert.setHeaderText(null);
@@ -132,7 +163,8 @@ public class MainController implements Initializable {
 
 	// load a new student into the program
 	@FXML
-	public String menuFileAddnew_btnClick(ActionEvent event) throws IOException {
+	public String menuFileAddnew_btnClick(ActionEvent event) throws IOException
+	{
 		// crate nodes for the new stage
 
 		Stage newStage = new Stage();
@@ -151,17 +183,16 @@ public class MainController implements Initializable {
 
 		return "return something";
 	}
-	
+
 	@FXML
 	public void printList(ActionEvent event)
 	{
-		//System.out.println("in printlist");
+		// System.out.println("in printlist");
 		showMsgBox(list.toString());
-		//System.out.println();
+		// System.out.println();
 	}
-	// TODO: work on this method 
 	@FXML
-	public Optional<String> menuFileAddFromText(ActionEvent event)
+	public Optional<String> menuFileAddFromText()
 	{
 		TextInputDialog dialog = new TextInputDialog("filepath");
 		dialog.setTitle("File path");
@@ -172,7 +203,6 @@ public class MainController implements Initializable {
 		Optional<String> result = dialog.showAndWait();
 		if (result.isPresent())
 		{
-		    //System.out.println("Your name: " + result.get());
 			return result;
 		}
 		return null;
@@ -180,37 +210,37 @@ public class MainController implements Initializable {
 
 	// close add new student stage
 	@FXML
-	public void handleCloseButtonAction(ActionEvent event) 
+	public void handleCloseButtonAction(ActionEvent event) // StudentLoadScene
 	{
 		Stage stage = (Stage) closeButton.getScene().getWindow();
 		stage.close();
 	}
 
 	@FXML
-	public void handleEnterButton(ActionEvent event) {
-
+	public void loadSceneHandleEnterButton(ActionEvent event) // StudentLoadScene
+	{
 		String name = txtUserName.getText();
 		int id = 0;
-		// cast
-		try 
-		{
-			 id = Integer.parseInt(txtID.getText());
-			
-		}
-		catch(Exception e)
+		
+		try
+		{	// cast
+			id = Integer.parseInt(txtID.getText());
+
+		} 
+		catch (Exception e)
 		{
 			showMsgBox("Enter a valid integer for ID");
 		}
-		
+
 		Student student = new Student(name, id);
 		list.addNode(student);
-		
+
 		resetLabels();
-	
 
 	}
+
 	@FXML
-	public void resetLabels()
+	public void resetLabels() // StudentLoadScene
 	{
 		// reset labels
 		txtUserName.setText("");
@@ -218,7 +248,8 @@ public class MainController implements Initializable {
 	}
 
 	@FXML
-	public void handleAddAnotherButtonAction() {
+	public void handleAddAnotherButtonAction() // StudentLoadScene
+	{
 		txtUserName.setText("");
 		txtID.setText("");
 	}
@@ -229,18 +260,54 @@ public class MainController implements Initializable {
 		textDisplay.setText("");
 	}
 
-	public java.util.Scanner readFile(String filename) {
+	public java.util.Scanner readFile(String filename)
+	{
 		java.util.Scanner inf = null;
-		try {
+		try
+		{
 			inf = new java.util.Scanner(new File(filename));
-		} catch (FileNotFoundException e) {
+		} catch (FileNotFoundException e)
+		{
 			System.out.println("file not found");
 		}
 		return inf;
 
 	}
 
-	public void initialize(URL arg0, ResourceBundle arg1) {
+	public void addFromText()
+	{
+		Optional<String> filename = menuFileAddFromText();
+
+		String fname = filename.get();
+
+		java.util.Scanner inf = readFile(fname);
+
+		while (inf.hasNextLine())
+		{
+			// output file here
+			// System.out.println(inf.nextLine());
+			// crate students object here and add to linkedList
+			String[] splittedStr = inf.nextLine().split(",");
+			String name = splittedStr[0].trim();
+			int id = Integer.parseInt(splittedStr[1].trim());
+
+			Student s = new Student(name, id);
+			list.addNode(s);
+
+		}
+		// finished reading file
+		printListCount();
+		// System.out.println(filename.get());
+	}
+
+	public void printListCount()
+	{
+		int count = list.getSize();
+		showMsgBox(count + " have been added to the list");
+	}
+
+	public void initialize(URL arg0, ResourceBundle arg1)
+	{
 		// TODO Auto-generated method stub
 
 	}

@@ -20,7 +20,8 @@ public class AppTester extends Application
 			primaryStage.setTitle("Student ClockIN");
 			primaryStage.setScene(scene);
 			primaryStage.show();
-		} catch (Exception e)
+		} 
+		catch (Exception e)
 		{
 			e.printStackTrace();
 		}

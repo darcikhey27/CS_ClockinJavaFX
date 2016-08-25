@@ -36,7 +36,7 @@
 			</children>
 		</VBox>
 		<Button layoutX="319.0" layoutY="176.0" mnemonicParsing="false"
-			onAction="#handleEnterButton" prefHeight="42.0" prefWidth="108.0"
+			onAction="#loadSceneHandleEnterButton" prefHeight="42.0" prefWidth="108.0"
 			text="Enter" />
 		<Label layoutX="61.0" layoutY="6.0" text="Load new Studnet">
 			<font>
