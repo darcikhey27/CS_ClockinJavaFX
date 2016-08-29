@@ -14,11 +14,13 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField; // use this do not use awt shit
 import javafx.scene.control.TextInputDialog;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import student.Student;
 import student.StudentLinkedList;
@@ -28,20 +30,32 @@ public class MainController implements Initializable
 {
 
 	// fields for StudentLoad scene
-	@FXML private TextField txtUserName;
-	@FXML private TextField txtID;
-	@FXML private Button closeButton;
+	@FXML 
+	private Pane studentScenePane;
+	@FXML
+	private TextField txtUserName;
+	@FXML
+	private TextField txtID;
+	@FXML
+	private Button closeButton;
+	@FXML private Button loadAnotherButton;
+	@FXML private Button loadSceneEnterButton;
+	@FXML private Label loadScenelbl;
+	
 
 	// student linkedlist
 	private static StudentLinkedList list = new StudentLinkedList();
 
 	//////////////////////////////////////
 
-	@FXML private TextField textDisplay; // main keypad TextField
-	@FXML private Button checkinButton;
-	@FXML private Button btnClear;
-	@FXML private Button mainCloseButton;
 	
+	@FXML
+	private TextField textDisplay; // main keypad TextField
+	@FXML
+	private Button checkinButton;
+	@FXML
+	private Button btnClear;
+
 
 	/* main method for getting user input using mouse click */
 	@FXML
@@ -50,15 +64,15 @@ public class MainController implements Initializable
 		String digit = ((Button) event.getSource()).getText();
 		String old = textDisplay.getText();
 		String newText = old + digit;
-		if(newText.length() <= 9)
+		if (newText.length() <= 9)
 		{
 			textDisplay.setText(newText);
-		}
+		} 
 		else
 		{
 			showMsgBox("check your digits");
 		}
-		
+
 	}
 
 	/* method writing input to the textDisplay textFiled */
@@ -120,24 +134,23 @@ public class MainController implements Initializable
 	public void handleCheckinButton(ActionEvent event)
 	{
 		// validate that the input is valid
-		
+
 		// check that students exist in the linkedList
-		
+
 		// create another linkedlist of checked in students
-		
+
 		// display you are checked in
-		
-		// if student is not in the student database  print message
+
+		// if student is not in the student database print message
 	}
-	
-	// calc scene 
-	@FXML
-	public void handleMainCloseButton(ActionEvent event)
+
+	// calc scene
+
+	@FXML public void handleMainCloseButton(ActionEvent event)
 	{
-		Stage stage = (Stage) mainCloseButton.getScene().getWindow();
-		stage.close();
+		//
 	}
-	// standard message box to show anything//
+
 	public void showMsgBox(String output)
 	{
 		Alert alert = new Alert(AlertType.INFORMATION);
@@ -175,6 +188,7 @@ public class MainController implements Initializable
 
 		// create a new scene with root and set the stage
 		Scene scene = new Scene(root);
+		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 		// create a new stage
 
 		newStage.setScene(scene);
@@ -192,6 +206,7 @@ public class MainController implements Initializable
 		showMsgBox(list.toString());
 		// System.out.println();
 	}
+
 	@FXML
 	public Optional<String> menuFileAddFromText()
 	{
@@ -222,13 +237,12 @@ public class MainController implements Initializable
 	{
 		String name = txtUserName.getText();
 		int id = 0;
-		
+
 		try
-		{	// cast
+		{ // cast
 			id = Integer.parseInt(txtID.getText());
 
-		} 
-		catch (Exception e)
+		} catch (Exception e)
 		{
 			showMsgBox("Enter a valid integer for ID");
 		}

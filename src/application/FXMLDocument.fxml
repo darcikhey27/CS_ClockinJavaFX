@@ -21,7 +21,7 @@
             <MenuItem mnemonicParsing="false" onAction="#menuFileAddnew_btnClick" text="Load 1 student" />
                   <MenuItem mnemonicParsing="false" onAction="#addFromText" text="Load students by textfile" />
                   <MenuItem mnemonicParsing="false" onAction="#printList" text="print current students" />
-                  <MenuItem fx:id="handleMainCloseButton" mnemonicParsing="false" onAction="#handleMainCloseButton" text="quit" />
+                  <MenuItem mnemonicParsing="false" text="quit" />
           </items>
         </Menu>
         <Menu mnemonicParsing="false" text="Help">

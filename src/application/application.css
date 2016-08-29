@@ -3,15 +3,15 @@
 
 /* add rules here */
 Button {
-	-fx-color: pink;
-	-fx-text-fill: green;
+	-fx-color: gray;
+	-fx-text-fill: white;
 	
 	/*-fx-border-color: rgb(219, 68, 55) red */
 	
 }
 #btnClear {
 	-fx-background-color: rgb(101, 101, 101);
-	-fx-text-fill: white;
+	-fx-text-fill: rgb(219, 68, 55) ;
 	-fx-background-radius: 5px;
 
 }
@@ -31,3 +31,28 @@ VBox{
   -fx-text-fill: white;
   -fx-background-radius: 16px;
 } */
+/* Student load scene styles */
+#studentScenePane {
+	-fx-background-color: rgb(101, 101, 101);
+}
+#closeButton{
+	-fx-background-color: rgb(219, 68, 55);
+	-fx-text-fill: white;
+	-fx-background-radius: 5px;
+}
+#loadAnotherButton {
+	-fx-background-color: rgb(66, 133, 244);
+	-fx-text-fill: white;
+	-fx-background-radius: 5px;
+}
+
+#loadSceneEnterButton{
+	-fx-background-color: rgb(15, 157, 88);
+	-fx-text-fill: white;
+	-fx-background-radius: 5px;
+}
+#loadScenelbl{
+	-fx-text-fill: white;
+	-fx-font-family: Consolas;
+	-fx-font-size: 2em;
+}
