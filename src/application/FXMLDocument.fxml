@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox onKeyPressed="#getKeyboardbInput" prefHeight="491.0" prefWidth="358.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+<VBox onKeyPressed="#getKeyboardbInput" onKeyTyped="#getKeyboardbInput" prefHeight="491.0" prefWidth="358.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
   <children>
     <MenuBar minWidth="-Infinity" VBox.vgrow="NEVER">
       <menus>
@@ -91,7 +91,7 @@
                         <Font size="28.0" />
                      </font>
                   </Button>
-                  <Button fx:id="checkinButton" layoutX="10.0" layoutY="138.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="130.0" text="Check in" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                  <Button fx:id="checkinButton" layoutX="10.0" layoutY="138.0" mnemonicParsing="false" onAction="#handleCheckinButton" prefHeight="90.0" prefWidth="130.0" text="Check in" GridPane.columnIndex="2" GridPane.rowIndex="3">
                      <font>
                         <Font size="19.0" />
                      </font>
