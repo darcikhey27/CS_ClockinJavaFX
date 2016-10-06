@@ -13,3 +13,7 @@
   
   <li><strong>Goal Finish Date</strong> : </li>
 </ul>
+
+<p>This program has been used in a lab enviroment to monitor student usage of network lab equipment</p>
+
+<img src="img/program_snapshot.png" alt="program" style="width:304px;height:228px;">

@@ -11,43 +11,38 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-
 public class LoadSceneController
 {
-	
+
 	@FXML
 	private TextField txtUserName;
-	@FXML 
+	@FXML
 	private TextField txtID;
 	@FXML
 	private Button closeButton;
-	
-	
-		// close add new student stage
-		@FXML
-		public void handleCloseButtonAction(ActionEvent event) 
-		{
-		    Stage stage = (Stage)closeButton.getScene().getWindow();
-		    stage.close();
-		}
-		@FXML
-		public void handleEnterButton(ActionEvent event)
-		{
-			
-			String name = txtUserName.getText();
-			int id = Integer.parseInt(txtID.getText());
-			
-			
-		}
-		
-		@FXML
-		public void handleAddAnotherButtonAction()
-		{
-			txtUserName.setText("");
-			txtID.setText("");
-		}
-	
-	
-	
+
+	// close add new student stage
+	@FXML
+	public void handleCloseButtonAction(ActionEvent event)
+	{
+		Stage stage = (Stage) closeButton.getScene().getWindow();
+		stage.close();
+	}
+
+	@FXML
+	public void handleEnterButton(ActionEvent event)
+	{
+
+		String name = txtUserName.getText();
+		int id = Integer.parseInt(txtID.getText());
+
+	}
+
+	@FXML
+	public void handleAddAnotherButtonAction()
+	{
+		txtUserName.setText("");
+		txtID.setText("");
+	}
 
 }

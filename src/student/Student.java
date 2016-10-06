@@ -4,19 +4,20 @@ public class Student
 {
 	private String name;
 	private int studentID;
-	
+
 	public Student()
 	{
-		
+
 	}
-	public Student(String pName,int pStudentID)
+
+	public Student(String pName, int pStudentID)
 	{
 		this.name = pName;
 		this.studentID = pStudentID;
 	}
-	
+
 	public String toString()
 	{
-		return this.name + " "+ this.studentID;
+		return this.name + " " + this.studentID;
 	}
 }

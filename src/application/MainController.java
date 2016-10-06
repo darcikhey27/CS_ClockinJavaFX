@@ -30,7 +30,7 @@ public class MainController implements Initializable
 {
 
 	// fields for StudentLoad scene
-	@FXML 
+	@FXML
 	private Pane studentScenePane;
 	@FXML
 	private TextField txtUserName;
@@ -38,24 +38,24 @@ public class MainController implements Initializable
 	private TextField txtID;
 	@FXML
 	private Button closeButton;
-	@FXML private Button loadAnotherButton;
-	@FXML private Button loadSceneEnterButton;
-	@FXML private Label loadScenelbl;
-	
+	@FXML
+	private Button loadAnotherButton;
+	@FXML
+	private Button loadSceneEnterButton;
+	@FXML
+	private Label loadScenelbl;
 
 	// student linkedlist
 	private static StudentLinkedList list = new StudentLinkedList();
 
 	//////////////////////////////////////
 
-	
 	@FXML
 	private TextField textDisplay; // main keypad TextField
 	@FXML
 	private Button checkinButton;
 	@FXML
 	private Button btnClear;
-
 
 	/* main method for getting user input using mouse click */
 	@FXML
@@ -67,8 +67,7 @@ public class MainController implements Initializable
 		if (newText.length() <= 9)
 		{
 			textDisplay.setText(newText);
-		} 
-		else
+		} else
 		{
 			showMsgBox("check your digits");
 		}
@@ -146,7 +145,8 @@ public class MainController implements Initializable
 
 	// calc scene
 
-	@FXML public void handleMainCloseButton(ActionEvent event)
+	@FXML
+	public void handleMainCloseButton(ActionEvent event)
 	{
 		//
 	}

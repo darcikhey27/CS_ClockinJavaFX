@@ -75,10 +75,10 @@ public class StudentLinkedList implements ListInterface
 		if (isEmpty())
 		{
 			this.head = newNode;
-		} 
-		else
+		} else
 		{
-			for (curr = head; curr.getNext() != null; curr = curr.getNext());
+			for (curr = head; curr.getNext() != null; curr = curr.getNext())
+				;
 			{
 				curr.setNext(newNode);
 			}
@@ -94,8 +94,7 @@ public class StudentLinkedList implements ListInterface
 		{
 			newNode.setNext(head);
 			this.head = newNode;
-		} 
-		else
+		} else
 		{
 			prev = find(index - 1);
 			newNode.setNext(prev.getNext());
