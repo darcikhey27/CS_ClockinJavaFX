@@ -16,4 +16,4 @@
 
 <p>This program has been used in a lab enviroment to monitor student usage of network lab equipment</p>
 
-<img src="img/program_snapshot.png" alt="program" style="width:304px;height:228px;">
+<img width="960" alt="program_snapshot" src="https://cloud.githubusercontent.com/assets/13792997/19164846/6ec07a72-8bb6-11e6-95e6-56430a71a4a0.PNG">
