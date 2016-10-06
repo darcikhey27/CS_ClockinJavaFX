@@ -69,7 +69,7 @@ public class MainController implements Initializable
 			textDisplay.setText(newText);
 		} else
 		{
-			showMsgBox("check your digits");
+			showMsgBox("id must be less then 9 digits");
 		}
 
 	}
@@ -133,6 +133,17 @@ public class MainController implements Initializable
 	public void handleCheckinButton(ActionEvent event)
 	{
 		// validate that the input is valid
+		String num = textDisplay.getText();
+		if(num.length() <= 9)
+		{
+			showMsgBox(num);
+			// good input, 
+		}
+		else
+		{
+			showMsgBox("Bad input");
+		}
+		
 
 		// check that students exist in the linkedList
 
